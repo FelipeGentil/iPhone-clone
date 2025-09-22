@@ -1,0 +1,23 @@
+.image-picker__item--green .image-picker__color {
+  background-color: #394c38;
+}
+
+.image-picker__item--silver .image-picker__color {
+  background-color: #f1f2ed;
+}
+
+.image-picker__item--golden .image-picker__color {
+  background-color: #fae7cf;
+}
+
+.image-picker__item--grafite .image-picker__color {
+  background-color: #54524f;
+}
+
+.image-picker__item--blue .image-picker__color {
+  background-color: #a7c1d9;
+}
+
+.image-picker__color--selected {
+  outline: 2px solid #43a1ff;
+}

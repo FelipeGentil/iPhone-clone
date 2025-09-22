@@ -1,0 +1,26 @@
+@media (max-width: 480px) {
+  .header__item {
+    display: none;
+  }
+
+  .header__logo {
+    display: flex;
+  }
+
+  .header__bottom-links a {
+    display: none;
+  }
+
+  .header__bottom-links .btn {
+    display: flex;
+  }
+
+  .main-content {
+    padding: 2rem;
+    overflow: hidden;
+  }
+
+  .main-content__subtitle {
+    font-size: 3rem;
+  }
+}

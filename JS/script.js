@@ -1,30 +1,24 @@
-const buttons = document.querySelectorAll("#image-picker");
-const image = document.querySelector("#product-image");
+const buttons = document.querySelectorAll(".image-picker__item");
+const image = document.querySelector(".main-content__product-image");
 
 buttons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const button = e.currentTarget; // garante que sempre seja a LI clicada
+    const color = button.getAttribute("data-color");
 
-    btn.addEventListener("click", (e) => {
+    // Remove seleção anterior
+    buttons.forEach((b) =>
+      b.querySelector(".image-picker__color").classList.remove("image-picker__color--selected")
+    );
 
-        console.log(e)
+    // Adiciona seleção na cor clicada
+    button.querySelector(".image-picker__color").classList.add("image-picker__color--selected");
 
-        buttons.forEach((btn) => {
-            btn.querySelector(".color").classList.remove("selected");
-        });
-
-        const button = e.target
-
-        const id = button.getAttribute("id");
-
-        button.querySelector(".color").classList.add("selected");
-
-        image.classList.add("changing");
-
-        image.setAttribute("src", `img/iphone_${id}.jpg`);
-
-        setTimeout(() => {
-            image.classList.toggle("changing");
-        }, 200);
-
-    });
-
+    // Anima troca de imagem
+    image.classList.add("changing");
+    image.setAttribute("src", `img/iphone_${color}.jpg`);
+    setTimeout(() => {
+      image.classList.remove("changing");
+    }, 200);
+  });
 });
